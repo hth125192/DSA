@@ -1,0 +1,11 @@
+1Kdoubles >> 6ms
+2Kdoubles >> 9ms
+4Kdoubles >> 20ms
+8Kdoubles >> 62ms
+16Kdoubles >> 226ms
+32Kdoubles >> 1029ms
+100Kdoubles >> 11250ms
+
+>> Quadratic O(N2)
+
+1Mdoubles >> (guess) 2^25ms
