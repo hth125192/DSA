@@ -1,5 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Stack;
-import java.util.Scanner;
 
 public class Solution {
     public static class SimpleTextEditor {
@@ -31,27 +33,29 @@ public class Solution {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         SimpleTextEditor s = new SimpleTextEditor();
-        Scanner sc = new Scanner(System.in);
-        int Q = sc.nextInt();
-        for (int i = 0; i < Q; i++)
-            switch (sc.nextInt()) {
-                case 1:
-                    s.append(sc.next());
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        int Q = Integer.parseInt(bufferedReader.readLine());
+        for (int i = 0; i < Q; i++) {
+            String[] type = bufferedReader.readLine().split(" ");
+            switch (type[0]) {
+                case "1":
+                    s.append(type[1]);
                     break;
-                case 2:
-                    s.delete(sc.nextInt());
+                case "2":
+                    s.delete(Integer.parseInt(type[1]));
                     break;
-                case 3:
-                    s.print(sc.nextInt());
+                case "3":
+                    s.print(Integer.parseInt(type[1]));
                     break;
-                case 4:
+                case "4":
                     s.undo();
                     break;
                 default:
                     break;
             }
+        }
     }
 
 }
